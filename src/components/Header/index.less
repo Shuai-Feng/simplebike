@@ -1,0 +1,66 @@
+.hh-middle(@_height){
+    height:@_height;
+    line-height: @_height;
+}
+
+.header{
+    background-color: #fff;
+    .header-top{
+        padding: 0 20px;
+       .hh-middle(60px);
+       text-align: right;
+
+       .logo{
+           line-height: 60px;
+           img{
+               width:40px;
+               vertical-align: middle;
+               margin:-3px 10px 0px 0px;
+           }
+       }
+       a{
+           margin-left: 1em;
+       }
+    }
+    .breadcrumb{
+        .hh-middle(40px);
+        padding: 0 20px;
+        border-top: 1px solid #40a9ff;
+        .breadcrumb-title{
+            text-align: center;
+            &:after{
+                position:absolute;
+                content:"";
+                left: 50%;
+                transform: translateX(-50%);
+                bottom:-8px;
+                width: 10px;
+                height: 10px;
+                border-top: 9px solid #fff;
+                border-left: 12px solid transparent;
+                border-right: 12px solid transparent;
+            }  
+        }
+        .weather{
+            text-align: right;
+            font-size: 14px;
+            .weather-img{
+                img{
+                    height:22px;
+                }
+            }
+            .weather-detail{
+                margin-left: 5px;
+            }
+        }
+    }
+} 
+.simple-page{
+    .header-top{
+         background-color: #09f;
+         color:white;
+         a{
+            color:white;
+         }
+    }
+}
