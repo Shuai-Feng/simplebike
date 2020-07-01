@@ -29,6 +29,7 @@ import OrderDetail from './page/order/detail';
 import EBar from './page/echarts/bar';
 import EPie from './page/echarts/pie';
 import ELine from './page/echarts/line';
+import Rich from './page/rich';
 export default class IRouter  extends Component {
     render(){
         return (
@@ -64,6 +65,8 @@ export default class IRouter  extends Component {
                                 <Route path='/admin/charts/bar' component={EBar}/>
                                 <Route path='/admin/charts/pie' component={EPie}/>
                                 <Route path='/admin/charts/line' component={ELine}/>
+                                <Route path='/admin/rich' component={Rich}/>
+                                <Route path='/' component={Rich}/>
                                 <Route component={Nomatch}></Route>
                             </Switch>
                         </Admin>
