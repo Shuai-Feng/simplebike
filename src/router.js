@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import { HashRouter,Route,Switch,Redirect} from 'react-router-dom';
+import { HashRouter,Route,Switch} from 'react-router-dom';
 
 import App from './App';
 import Login from './page/login';
@@ -21,9 +21,14 @@ import BasicTable from './page/table/basictable';
 import HighTable from './page/table/higertable';
 import City from './page/city';
 import Order from './page/order';
+import User from './page/user';
+import BikeMap from './page/map/bikemap';
 
 import Common from './common';
 import OrderDetail from './page/order/detail';
+import EBar from './page/echarts/bar';
+import EPie from './page/echarts/pie';
+import ELine from './page/echarts/line';
 export default class IRouter  extends Component {
     render(){
         return (
@@ -54,7 +59,11 @@ export default class IRouter  extends Component {
                                 <Route path='/admin/table/high' component={HighTable}/>
                                 <Route path='/admin/city' component={City}/>
                                 <Route path='/admin/order' component={Order}/>
-                                <Redirect to="/admin/order" />
+                                <Route path='/admin/user' component={User}/>
+                                <Route path='/admin/bikeMap' component={BikeMap}/>
+                                <Route path='/admin/charts/bar' component={EBar}/>
+                                <Route path='/admin/charts/pie' component={EPie}/>
+                                <Route path='/admin/charts/line' component={ELine}/>
                                 <Route component={Nomatch}></Route>
                             </Switch>
                         </Admin>

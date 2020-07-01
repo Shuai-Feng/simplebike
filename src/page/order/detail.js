@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card  } from 'antd';  
+import { Card } from 'antd';  
 import axios from '../../axios/index';
 // import Utils from '../../util/utils';
 import './detail.less'

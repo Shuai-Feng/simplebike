@@ -21,7 +21,12 @@ export default class Axios {
             loading = document.getElementById('ajaxLoading');
             loading.style.display = 'block';
         }
-        let baseURL = "https://www.fastmock.site/mock/cc1a61c8ea14b1c8ae0775b75ca1d29e/cheche";
+        let baseURL ;
+        if(options.isMock){
+            baseURL = "https://www.fastmock.site/mock/cc1a61c8ea14b1c8ae0775b75ca1d29e/cheche";
+        }else{
+            baseURL = "https://www.fastmock.site/mock/cc1a61c8ea14b1c8ae0775b75ca1d29e/cheche";
+        }
         return new Promise((resolve,reject)=>{
             axios({
                 url:options.url,
@@ -50,39 +55,24 @@ export default class Axios {
             })
         })
     }
-    static ajax2(options){
-        let loading;
-        if(options.data && options.data.isShowLoading !==false){
-            loading = document.getElementById('ajaxLoading');
-            loading.style.display = 'block';
+    static requestList(_this,url,params,isMock){
+        var data = {
+            params,
+            isMock
         }
-        let baseURL = "https://www.easy-mock.com/mock/5a7278e28d0c633b9c4adbd7/api";
-        return new Promise((resolve,reject)=>{
-            axios({
-                url:options.url,
-                method:"get",
-                baseURL:baseURL,
-                timeout:5000,
-                params:(options.data && options.data.params)||''
-            }).then(response=>{
-               
-                if(response.status === 200){
-                    let res = response.data;
-                    if(res.code === "0"){
-                        resolve(res)
-                        loading.style.display = 'none';
-                    }else{
-                        Modal.info({
-                            title:"提示",
-                            content:res.msg
-                        })
-                        loading.style.display = 'none';
-                    }
-                }else{
-                    reject(response.data);
-                    loading.style.display = 'none';
-                }
-            })
+        this.ajax({
+            url,
+            data
+        }).then((data)=>{
+            if(data && data.result){
+                let list = data.result.item_list.map((item, index) => {
+                    item.key = index;
+                    return item;
+                });
+                _this.setState({
+                    list
+                })
+            }
         })
     }
 }
