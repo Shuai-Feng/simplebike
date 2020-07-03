@@ -30,6 +30,7 @@ import EBar from './page/echarts/bar';
 import EPie from './page/echarts/pie';
 import ELine from './page/echarts/line';
 import Rich from './page/rich';
+import Permision from './page/permision';
 export default class IRouter  extends Component {
     render(){
         return (
@@ -45,28 +46,29 @@ export default class IRouter  extends Component {
                     <Route path='/' render={()=>(
                         <Admin>
                             <Switch>
-                                <Route path='/admin/home' component={Home}/> 
-                                <Route path='/admin/ui/buttons' component={Buttons}/>
-                                <Route path='/admin/ui/modals' component={Model}/>
-                                <Route path='/admin/ui/Loadings' component={Loading}/>
-                                <Route path='/admin/ui/notification' component={Notice}/>
-                                <Route path='/admin/ui/messages' component={Message}/>
-                                <Route path='/admin/ui/tabs' component={Tags}/>
-                                <Route path='/admin/ui/gallery' component={Gallery}/>
-                                <Route path='/admin/ui/carousel' component={Carousels}/>
-                                <Route path='/admin/form/login' component={FormLogin}/>
-                                <Route path='/admin/form/reg' component={FormRegister}/>
-                                <Route path='/admin/table/basic' component={BasicTable}/>
-                                <Route path='/admin/table/high' component={HighTable}/>
-                                <Route path='/admin/city' component={City}/>
-                                <Route path='/admin/order' component={Order}/>
-                                <Route path='/admin/user' component={User}/>
-                                <Route path='/admin/bikeMap' component={BikeMap}/>
-                                <Route path='/admin/charts/bar' component={EBar}/>
-                                <Route path='/admin/charts/pie' component={EPie}/>
-                                <Route path='/admin/charts/line' component={ELine}/>
-                                <Route path='/admin/rich' component={Rich}/>
-                                <Route path='/' component={Rich}/>
+                                <Route path='/home' component={Home}/> 
+                                <Route path='/ui/buttons' component={Buttons}/>
+                                <Route path='/ui/modals' component={Model}/>
+                                <Route path='/ui/Loadings' component={Loading}/>
+                                <Route path='/ui/notification' component={Notice}/>
+                                <Route path='/ui/messages' component={Message}/>
+                                <Route path='/ui/tabs' component={Tags}/>
+                                <Route path='/ui/gallery' component={Gallery}/>
+                                <Route path='/ui/carousel' component={Carousels}/>
+                                <Route path='/form/login' component={FormLogin}/>
+                                <Route path='/form/reg' component={FormRegister}/>
+                                <Route path='/table/basic' component={BasicTable}/>
+                                <Route path='/table/high' component={HighTable}/>
+                                <Route path='/city' component={City}/>
+                                <Route path='/order' component={Order}/>
+                                <Route path='/user' component={User}/>
+                                <Route path='/bikeMap' component={BikeMap}/>
+                                <Route path='/charts/bar' component={EBar}/>
+                                <Route path='/charts/pie' component={EPie}/>
+                                <Route path='/charts/line' component={ELine}/>
+                                <Route path='/rich' component={Rich}/>
+                                <Route path='/permission' component={Permision}/>
+                                <Route path='/' component={Permision}/>
                                 <Route component={Nomatch}></Route>
                             </Switch>
                         </Admin>

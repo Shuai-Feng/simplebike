@@ -38,6 +38,7 @@ export default class Order extends React.Component{
     ]
     componentDidMount(){
         this.requestList()
+        console.log('order',this.state)
     }
 
     handleFilter = (params)=>{
@@ -47,6 +48,7 @@ export default class Order extends React.Component{
     requestList = ()=>{
         // let _this = this;
         axios.requestList(this,'/orderlist',this.params,true);
+        
         // axios.ajax({
         //     url:'/orderlist',
         //     data:{

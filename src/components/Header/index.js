@@ -19,14 +19,17 @@ class Header extends Component {
         this.getWeatherApIData();
     }
     getWeatherApIData(){
-        // console.log('请求调用了')
-        // Axiso.jsonp({
-        //     url:'http://api.map.baidu.com/weather/v1/?district_id=110100&data_type=all&ak=AjgOd5cXAYtLNL2omrQq3OXXxC6IbYw5&qq-pf-to=pcqq.c2c'
+        // let city = '北京';
+        // axios.jsonp({
+        //     url:'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2'
         // }).then((res)=>{
-        //     console.log(res);
-        // })
-        // axios.get('http://192.168.0.102:8080/demo8/Teacher_viewStudent').then(res=>{
-        //     console.log(res)
+        //     if(res.status == 'success'){
+        //         let data = res.results[0].weather_data[0];
+        //         this.setState({
+        //             dayPictureUrl:data.dayPictureUrl,
+        //             weather:data.weather
+        //         })
+        //     }
         // })
     }
     render() {

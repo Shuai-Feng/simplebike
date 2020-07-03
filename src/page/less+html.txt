@@ -1,0 +1,27 @@
+                <div className="mybox">
+                    <div className="box box1"></div>
+                    <div className="box box2"></div>
+                    <div className="box box3"></div>
+                </div>
+
+
+less部分
+~~~~~~~~~~~~~~~~~~~~~~
+
+.mybox{
+    height:500px;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .box{
+        margin-right: 10px;
+        height:100px;
+        width:100px;
+        background-color: #09f;
+        &:last-child{
+            background: green;
+            align-self: flex-start;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.mybox{
+    height:500px;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .box{
+        margin-right: 10px;
+        width:100px;
+        background-color: #09f;
+        &:nth-child(1){
+            width:200px;
+            // align-self: stretch;
+        }
+        &:nth-child(2){
+            flex: 1;
+            align-self: stretch;
+        }
+        &:nth-child(3){
+            flex: 1.5;
+            align-self: center;
+            width: 100px;
+            height: 100px;
+        }
+        &:last-child{
+            width:200px;
+            background: green;
+            align-self: flex-start;
+        }
+    }
+}
